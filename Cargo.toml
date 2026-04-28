@@ -1,0 +1,11 @@
+[package]
+name = "bzlui"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+trie-rs = "0.4"
+ratatui = "0.29"
+crossterm = { version = "0.28", features = ["event-stream"] }
+tokio = { version = "1", features = ["rt", "macros", "process", "sync", "io-util"] }
+tokio-stream = "0.1"
