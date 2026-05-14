@@ -151,7 +151,7 @@ impl<'a> MainView<'a> {
                 ("↑↓/jk/C-u/C-d/PgUp/PgDn", "Navigate"),
                 ("Enter", "Select"),
                 ("u", "Go to Parent"),
-                ("Tab", "Switch View"),
+                ("Tab/h/l", "Switch View"),
                 ("q", "Quit"),
             ],
             0,
@@ -166,7 +166,7 @@ impl<'a> MainView<'a> {
             vec![
                 ("↑↓/jk/C-u/C-d/PgUp/PgDn", "Navigate"),
                 ("Enter", "View Rule"),
-                ("Tab", "Switch View"),
+                ("Tab/h/l", "Switch View"),
                 ("q", "Quit"),
             ],
             0,
@@ -277,11 +277,11 @@ impl<'a> MainView<'a> {
         }
 
         match key.code {
-            KeyCode::Char('1') => {
+            KeyCode::Char('1') | KeyCode::Char('h') => {
                 self.focus_view(1);
                 return true;
             }
-            KeyCode::Char('2') => {
+            KeyCode::Char('2') | KeyCode::Char('l') => {
                 self.focus_view(2);
                 return true;
             }
